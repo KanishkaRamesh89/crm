@@ -37,16 +37,20 @@ CRM/
   frontend/
   .gitignore
   README.md
+
 Prerequisites
 Make sure you have these installed:
+
 Python 3.10+
 Node.js 18+
 PostgreSQL
 Setup Instructions
+
 1. Clone the repository
 git clone https://github.com/USERNAME/REPO.git
 cd CRM
 2. Backend Setup
+
 Go to the backend folder and install dependencies:
 cd backend
 pip install -r requirements.txt
@@ -65,26 +69,34 @@ POSTGRES_PORT=5433
 POSTGRES_DB=crm_db
 
 FRONTEND_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+
 Run the backend server:
 uvicorn app.main:app --reload
+
 The backend runs at:
 http://localhost:8000
+
 3. Frontend Setup
 Open a new terminal and go to the frontend folder:
 cd frontend
 npm install
+
 If needed, create a .env file inside frontend/:
 VITE_API_BASE_URL=http://localhost:8000
+
 Run the frontend:
 npm run dev
+
 The frontend runs at:
 http://localhost:5173
+
 Available Scripts
 Frontend
 npm run dev
 npm run build
 npm run lint
 npm run preview
+
 API Endpoints
 GET /api/interactions
 GET /api/interactions/{id}
@@ -94,6 +106,7 @@ DELETE /api/interactions/{id}
 GET /api/dashboard
 POST /api/chat
 WS /api/notifications/ws
+
 Notes
 Database tables are created automatically on startup.
 Backend JSON uses snake_case naming.
