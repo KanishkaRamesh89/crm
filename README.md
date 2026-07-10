@@ -1,23 +1,24 @@
 # CRM Application
 
-A full-stack CRM application with a FastAPI backend and a React + Vite frontend.
+A full-stack CRM application built with a FastAPI backend and a React + Vite frontend. The app helps manage interactions, track follow-ups, view summaries, and support chat and real-time notifications.
 
 ## Features
 
-- Log, edit, and delete interactions
-- View dashboard summaries
-- Track follow-ups and visit status
-- Chat endpoint support
-- Real-time notifications via WebSocket
+- Log, edit, and delete customer interactions
+- View dashboard metrics and recent activity
+- Track pending follow-ups and completed visits
+- Chat endpoint for AI-assisted workflows
+- Real-time notifications through WebSocket
+- Clean React dashboard with Redux state management
 
 ## Tech Stack
 
 ### Backend
 - FastAPI
 - Python
-- PostgreSQL
 - SQLAlchemy
 - Pydantic
+- PostgreSQL
 - Uvicorn
 
 ### Frontend
@@ -37,20 +38,19 @@ CRM/
   .gitignore
   README.md
 Prerequisites
-Python 3.10 or higher
-Node.js 18 or higher
+Make sure you have these installed:
+Python 3.10+
+Node.js 18+
 PostgreSQL
-Setup
-
+Setup Instructions
 1. Clone the repository
 git clone https://github.com/USERNAME/REPO.git
 cd CRM
-
 2. Backend Setup
 Go to the backend folder and install dependencies:
 cd backend
 pip install -r requirements.txt
-Create a .env file in backend/:
+Create a .env file inside backend/:
 APP_NAME=CRM Backend
 APP_VERSION=1.0.0
 API_PREFIX=/api
@@ -65,21 +65,19 @@ POSTGRES_PORT=5433
 POSTGRES_DB=crm_db
 
 FRONTEND_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
-Run the backend:
+Run the backend server:
 uvicorn app.main:app --reload
-Backend URL:
+The backend runs at:
 http://localhost:8000
-
 3. Frontend Setup
 Open a new terminal and go to the frontend folder:
 cd frontend
 npm install
-Create a .env file in frontend/ if needed:
+If needed, create a .env file inside frontend/:
 VITE_API_BASE_URL=http://localhost:8000
 Run the frontend:
 npm run dev
-
-Frontend URL:
+The frontend runs at:
 http://localhost:5173
 Available Scripts
 Frontend
@@ -96,10 +94,9 @@ DELETE /api/interactions/{id}
 GET /api/dashboard
 POST /api/chat
 WS /api/notifications/ws
-
 Notes
-Tables are created automatically on startup.
-The frontend API base URL defaults to http://localhost:8000.
-Backend uses snake_case JSON.
-Frontend converts API data to camelCase.
-The chat endpoint is ready for future AI integration.
+Database tables are created automatically on startup.
+Backend JSON uses snake_case naming.
+Frontend converts API data into camelCase for React components.
+The chat endpoint is currently a placeholder for future AI integration.
+Make sure PostgreSQL is running before starting the backend.
